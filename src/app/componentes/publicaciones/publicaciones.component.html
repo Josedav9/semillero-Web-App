@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Publicaciones de los Semilleros</h1>
+  <hr>
+  <div class="row">
+    <div *ngFor="let publicacion of publicaciones; let i = index"
+          class="card col-xl-4" style="width: 18rem;">
+      <img class="card-img-top" src="https://placeimg.com/286/180/any" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"> {{ publicacion.tituloPublicacion }} </h5>
+        <p class="card-text"> {{ publicacion.textoPublicacion }} </p>
+      </div>
+      <div class="card-body">
+        <button (click)="verPublicacion( publicacion.idPublicacion )"
+                class="btn btn-outline-primary btn-block"
+                type="button" name="button"> Ver mas</button>
+      </div>
+    </div>
+    <div class="card col-xl-4" style="width: 18rem;">
+      <img class="card-img-top" src="assets/img/SIMBOLO-MAS.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Agregar nuevo</h5>
+        <p class="card-text">Agregar nueva publicacion</p>
+        <button (click)="agregarPublicacion()"
+                type="button" class="btn btn-outline-primary btn-block">
+          Crear nuevo
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

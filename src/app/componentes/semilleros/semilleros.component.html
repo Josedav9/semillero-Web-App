@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>Lista de Semilleros</h1>
+  <hr>
+  <div class="row align-items-center" >
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Lider</th>
+          <th scope="col">Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let semillero of semilleros; let i = index">
+          <th scope="row">{{ i+1 }}</th>
+          <td>{{ semillero.nombreSemillero }}</td>
+          <td>{{ semillero.descripcionSemillero }}</td>
+          <td>{{ semillero.liderSemillero }}</td>
+          <td>
+            <button type="button" class="btn btn-outline-warning">
+              Modificar
+            </button>
+            <button (click)="borrarSemillero( semillero.idSemillero, i )"
+              class="btn btn-outline-danger"> Eliminar </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

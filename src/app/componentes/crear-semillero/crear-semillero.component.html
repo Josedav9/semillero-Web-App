@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-xl-8">
+      <h1>Crear semillero</h1>
+      <hr>
+      <div class="form-group">
+        <label>Nombre Semillero</label>
+        <input [(ngModel)]="nuevoSemillero.nombreSemillero"
+              type="text" class="form-control" placeholder="Ingrese nombre">
+      </div>
+      <div class="form-group">
+        <label>Lider Semillero</label>
+        <input [(ngModel)]="nuevoSemillero.liderSemillero"
+              type="text" class="form-control" placeholder="Ingrese lider">
+      </div>
+      <div class="form-group">
+        <label>Descripcion Semillero</label>
+        <input [(ngModel)]="nuevoSemillero.descripcionSemillero"
+              type="text" class="form-control" placeholder="Ingrese descripcion">
+      </div>
+
+      <div class="">
+        <button (click)="crearSemillero()"
+                class="btn btn-outline-primary btn-block"
+                type="button" name="button">Crear Semillero</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div *ngIf="exito"
+        class="alert alert-success"
+        role="alert">
+      <strong>Se creo Exitosamente</strong>
+  </div>
+
+</div>

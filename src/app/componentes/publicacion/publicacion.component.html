@@ -1,0 +1,47 @@
+<div class="container margen">
+  <div class="row">
+    <div class="col-xl-4">
+      <img src="https://placeimg.com/286/180/any">
+      <p> <small>{{ publicacion.fechaPublicacion }}</small> </p>
+    </div>
+    <div class="col-xl-8">
+      <div class="form-group">
+        <label>Titulo Publicacion</label>
+        <input [(ngModel)]="publicacion.tituloPublicacion"
+              type="text" class="form-control" id="" placeholder="">
+      </div>
+      <div class="form-group">
+        <label>Contenido</label>
+        <input [(ngModel)]="publicacion.textoPublicacion"
+              type="text" class="form-control" id="" placeholder="">
+      </div>
+      <div class="form-group">
+        <label>Semillero</label>
+        <select [(ngModel)]="publicacion.idSemillero"
+                class="form-control" name="">
+          <option *ngFor="let semillero of semilleros"
+                  [value]="semillero.idSemillero">{{ semillero.nombreSemillero }}</option>
+        </select>
+      </div>
+      <div class="">
+        <button (click)="actualizarPublicacion( publicacion )"
+                class="btn btn-outline-warning btn-block"
+                type="button" name="button"> Actualizar </button>
+
+        <button (click)="borrarPublicacion()"
+                class="btn btn-outline-danger btn-block"
+                type="button" name="button"> Eliminar </button>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="exito"
+        class="alert alert-warning"
+        role="alert">
+      <strong>Se actualizo correctamente</strong>
+  </div>
+  <div *ngIf="borro"
+        class="alert alert-danger"
+        role="alert">
+      <strong>Se borro Exitosamente</strong>
+  </div>
+</div>
