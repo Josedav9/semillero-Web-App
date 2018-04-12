@@ -11,6 +11,12 @@ import { Semillero } from '../../interfaces/semillero'
 export class SemillerosComponent implements OnInit {
 
   semilleros:Semillero[];
+  semilleroModal:Semillero = {
+    nombreSemillero:"",
+    liderSemillero:"",
+    descripcionSemillero:""
+  };
+  exito:boolean = false
   constructor( public _apiservice:RestApiService ) {
     this._apiservice.listaSemilleros().subscribe(
       datos => {
@@ -29,6 +35,16 @@ export class SemillerosComponent implements OnInit {
       }
     )
   }
+
+  actualizarSemillero(){
+    this._apiservice.actualizarSemillero(this.semilleroModal).subscribe(
+      (datos)=>{
+        console.log(datos);
+        this.exito = true;
+      }
+    );
+  }
+
 
 
   ngOnInit() {

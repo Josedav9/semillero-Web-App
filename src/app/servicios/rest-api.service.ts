@@ -25,6 +25,10 @@ export class RestApiService {
     return this.http.post(`${this.url}semilleros/crearSemillero`, body )
   }
 
+  actualizarSemillero( semilleroActual:Semillero ){
+    return this.http.post(`${this.url}semilleros/modificarSemillero`, semilleroActual);
+  }
+
   listaPublicaciones():Observable<any>{
     return this.http.get(`${ this.url }publicaciones/listaPublicaciones`)
   }

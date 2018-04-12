@@ -19,7 +19,9 @@
           <td>{{ semillero.descripcionSemillero }}</td>
           <td>{{ semillero.liderSemillero }}</td>
           <td>
-            <button type="button" class="btn btn-outline-warning">
+            <button (click) = "semilleroModal = semillero"
+                    data-toggle="modal" data-target="#exampleModal"
+                    type="button" class="btn btn-outline-warning">
               Modificar
             </button>
             <button (click)="borrarSemillero( semillero.idSemillero, i )"
@@ -28,5 +30,46 @@
         </tr>
       </tbody>
     </table>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"> {{ semilleroModal.nombreSemillero }} </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Nombre Semillero</label>
+          <input [(ngModel)]="semilleroModal.nombreSemillero"
+                type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Lider Semillero</label>
+          <input [(ngModel)]="semilleroModal.liderSemillero"
+                type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Descripcion Semillero</label>
+          <input [(ngModel)]="semilleroModal.descripcionSemillero"
+                type="text" class="form-control">
+        </div>
+        <div *ngIf="exito"
+              class="alert alert-success"
+              role="alert">
+            <strong>Se creo Exitosamente</strong>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button (click)="exito=false"
+                type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button (click)="actualizarSemillero()"
+                type="button" class="btn btn-primary">Guardar Cambios</button>
+      </div>
+    </div>
   </div>
 </div>
