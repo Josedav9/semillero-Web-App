@@ -20,6 +20,7 @@ export class PublicacionesComponent implements OnInit {
     )
   }
 
+
   verPublicacion(id:number){
       console.log(id);
       this.router.navigate( ['publicaciones/publicacion',id] );
