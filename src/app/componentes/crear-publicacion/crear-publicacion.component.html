@@ -1,10 +1,8 @@
 <div class="container margen">
-  <div class="row">
-    <div class="col-xl-4">
-      <img src="https://placeimg.com/286/180/any">
-      <p> <small>{{ nuevaPublicacion.fechaPublicacion }}</small> </p>
-    </div>
-    <div class="col-xl-8">
+  <div class="card mb-3">
+    <img class="card-img-top" src="https://placeimg.com/780/250/any" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"> {{ nuevaPublicacion.fechaPublicacion }} </h5>
       <div class="form-group">
         <label>Titulo Publicacion</label>
         <input [(ngModel)]="nuevaPublicacion.tituloPublicacion"
@@ -23,18 +21,15 @@
                   [value]="semillero.idSemillero">{{ semillero.nombreSemillero }}</option>
         </select>
       </div>
-      <div class="">
-        <button (click)="agregarPublicacion()"
-                class="btn btn-outline-success btn-block"
-                type="button" name="button"> Crear Semillero </button>
-      </div>
+      <button (click)="agregarPublicacion()"
+              class="btn btn-outline-success btn-block"
+              type="button" name="button"> Crear Semillero </button>
     </div>
   </div>
+</div>
 
   <div *ngIf="exito"
         class="alert alert-success"
         role="alert">
       <strong>Se creo Exitosamente</strong>
   </div>
-
-</div>

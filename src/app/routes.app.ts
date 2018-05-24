@@ -11,7 +11,7 @@ const APP_ROUTES: Routes = [
   { path: 'publicaciones', component: PublicacionesComponent },
   { path: 'publicaciones/publicacion/:id', component: PublicacionComponent },
   { path: 'publicaciones/crearPublicacion', component: CrearPublicacionComponent },
-  { path: '**', pathMatch: 'full', redirectTo: 'crearSemillero' }
+  { path: '**', pathMatch: 'full', redirectTo: 'publicaciones' }
 ];
 
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES);

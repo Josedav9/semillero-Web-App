@@ -25,7 +25,7 @@ export class CrearPublicacionComponent implements OnInit {
    }
 
    agregarPublicacion(){
-     this._apiservice.nuevaPublicacion(this.nuevaPublicacion).subscribe(
+     this._apiservice.nuevaPublicacion( this.nuevaPublicacion ).subscribe(
        datos =>{
          console.log(datos);
          this.exito = true;
